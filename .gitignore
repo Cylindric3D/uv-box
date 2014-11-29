@@ -1,0 +1,5 @@
+*.bak
+*.wings~
+*.kicad_pcb-bak
+~$*.SLDPRT
+~$*.xlsx
