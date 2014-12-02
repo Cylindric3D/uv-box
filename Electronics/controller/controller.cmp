@@ -1,0 +1,94 @@
+Cmp-Mod V01 Created by Cvpcb (2014-10-27 BZR 5228)-product   date = 02/12/2014 00:44:18
+
+BeginCmp
+TimeStamp = /5480D3D6;
+Reference = P1;
+ValeurCmp = PROMICRO_A;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x12;
+EndCmp
+
+BeginCmp
+TimeStamp = /5480D3FB;
+Reference = P2;
+ValeurCmp = PROMICRO_B;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x12;
+EndCmp
+
+BeginCmp
+TimeStamp = /547C79D3;
+Reference = P3;
+ValeurCmp = PANEL_2;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /547C8F92;
+Reference = P4;
+ValeurCmp = PANEL_1;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /547DF01E;
+Reference = P5;
+ValeurCmp = DIAL;
+IdModule  = Connect:bornier3;
+EndCmp
+
+BeginCmp
+TimeStamp = /547E058A;
+Reference = P6;
+ValeurCmp = POWER;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /547C7385;
+Reference = Q1;
+ValeurCmp = BS107;
+IdModule  = Discret:TO92;
+EndCmp
+
+BeginCmp
+TimeStamp = /547CA019;
+Reference = R1;
+ValeurCmp = 10k;
+IdModule  = Discret:R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /547DF12A;
+Reference = R2;
+ValeurCmp = 10k;
+IdModule  = Discret:R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /547DF0B8;
+Reference = R3;
+ValeurCmp = 10k;
+IdModule  = Discret:R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /547E156D;
+Reference = R4;
+ValeurCmp = 1k;
+IdModule  = Discret:R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /547E14EB;
+Reference = R5;
+ValeurCmp = 330;
+IdModule  = Discret:R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /547E0874;
+Reference = U1;
+ValeurCmp = LM317T;
+IdModule  = Power_Integrations:TO-220;
+EndCmp
+
+EndListe
