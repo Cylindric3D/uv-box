@@ -1,4 +1,18 @@
-Cmp-Mod V01 Created by Cvpcb (2014-10-27 BZR 5228)-product   date = 02/12/2014 00:44:18
+Cmp-Mod V01 Created by Cvpcb (2014-10-27 BZR 5228)-product   date = 02/12/2014 21:44:00
+
+BeginCmp
+TimeStamp = /547E3173;
+Reference = C1;
+ValeurCmp = 0.1uF;
+IdModule  = Capacitors_ThroughHole:Capacitor4x3RM2.5;
+EndCmp
+
+BeginCmp
+TimeStamp = /547E3123;
+Reference = C2;
+ValeurCmp = 0.1uF;
+IdModule  = Capacitors_ThroughHole:Capacitor4x3RM2.5;
+EndCmp
 
 BeginCmp
 TimeStamp = /5480D3D6;
@@ -43,6 +57,20 @@ IdModule  = Connect:bornier2;
 EndCmp
 
 BeginCmp
+TimeStamp = /547E4594;
+Reference = P7;
+ValeurCmp = SWITCH;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /547EBF99;
+Reference = P8;
+ValeurCmp = LED_DISPLAY;
+IdModule  = Pin_Headers:Pin_Header_Straight_2x08;
+EndCmp
+
+BeginCmp
 TimeStamp = /547C7385;
 Reference = Q1;
 ValeurCmp = BS107;
@@ -57,16 +85,16 @@ IdModule  = Discret:R3;
 EndCmp
 
 BeginCmp
-TimeStamp = /547DF12A;
+TimeStamp = /547E9A46;
 Reference = R2;
-ValeurCmp = 10k;
+ValeurCmp = 33R;
 IdModule  = Discret:R3;
 EndCmp
 
 BeginCmp
-TimeStamp = /547DF0B8;
+TimeStamp = /547E9AE5;
 Reference = R3;
-ValeurCmp = 10k;
+ValeurCmp = 33R;
 IdModule  = Discret:R3;
 EndCmp
 
@@ -85,10 +113,80 @@ IdModule  = Discret:R3;
 EndCmp
 
 BeginCmp
+TimeStamp = /547E8F65;
+Reference = R6;
+ValeurCmp = 33R;
+IdModule  = Discret:R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /547E9038;
+Reference = R7;
+ValeurCmp = 33R;
+IdModule  = Discret:R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /547E9062;
+Reference = R8;
+ValeurCmp = 33R;
+IdModule  = Discret:R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /547E90B3;
+Reference = R9;
+ValeurCmp = 33R;
+IdModule  = Discret:R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /547E90F3;
+Reference = R10;
+ValeurCmp = 33R;
+IdModule  = Discret:R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /547E912E;
+Reference = R11;
+ValeurCmp = 33R;
+IdModule  = Discret:R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /547E9166;
+Reference = R12;
+ValeurCmp = 33R;
+IdModule  = Discret:R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /547E939C;
+Reference = R13;
+ValeurCmp = 33R;
+IdModule  = Discret:R3;
+EndCmp
+
+BeginCmp
 TimeStamp = /547E0874;
 Reference = U1;
 ValeurCmp = LM317T;
 IdModule  = Power_Integrations:TO-220;
+EndCmp
+
+BeginCmp
+TimeStamp = /547E57E1;
+Reference = U2;
+ValeurCmp = 74HC595;
+IdModule  = Sockets_DIP:DIP-16__300;
+EndCmp
+
+BeginCmp
+TimeStamp = /547E5F77;
+Reference = U3;
+ValeurCmp = 74HC595;
+IdModule  = Sockets_DIP:DIP-16__300;
 EndCmp
 
 EndListe

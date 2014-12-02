@@ -1,4 +1,4 @@
-update=02/12/2014 00:18:05
+update=02/12/2014 20:06:48
 last_client=kicad
 [general]
 version=1
@@ -74,4 +74,5 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=../lib/borniers
+LibName32=C:/Users/Mark/Documents/Dev/uv-box/Electronics/lib/components
 
