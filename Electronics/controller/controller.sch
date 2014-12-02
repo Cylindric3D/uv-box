@@ -529,4 +529,34 @@ Wire Notes Line
 	3500 850  1050 850 
 Text Notes 1050 850  0    60   ~ 0
 Power
+Wire Notes Line
+	4250 1450 4250 3250
+Wire Notes Line
+	4250 3250 5850 3250
+Wire Notes Line
+	5850 3250 5850 1450
+Wire Notes Line
+	5850 1450 4250 1450
+Wire Notes Line
+	7050 1100 8550 1100
+Wire Notes Line
+	8550 1100 8550 2650
+Wire Notes Line
+	8550 2650 7050 2650
+Wire Notes Line
+	7050 2650 7050 1100
+Wire Notes Line
+	900  3400 3400 3400
+Wire Notes Line
+	3400 3400 3400 4850
+Wire Notes Line
+	3400 4850 900  4850
+Wire Notes Line
+	900  4850 900  3400
+Text Notes 4250 1450 0    60   ~ 0
+Panel Control
+Text Notes 7050 1100 0    60   ~ 0
+Dial Input
+Text Notes 900  3400 0    60   ~ 0
+Arduino Pro Micro Headers
 $EndSCHEMATC
