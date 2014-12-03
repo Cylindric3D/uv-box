@@ -1,4 +1,4 @@
-update=02/12/2014 23:32:39
+update=03/12/2014 12:07:57
 last_client=kicad
 [general]
 version=1
@@ -39,6 +39,19 @@ LibName13=led
 LibName14=dip_sockets
 LibName15=pga_sockets
 LibName16=valves
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+RptD_X=0
+RptD_Y=100
+RptLab=1
+LabSize=60
 [eeschema]
 version=1
 LibDir=
@@ -74,18 +87,4 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=../lib/borniers
-LibName32=C:/Users/Mark/Documents/Dev/uv-box/Electronics/lib/components
-[schematic_editor]
-version=1
-PageLayoutDescrFile=
-PlotDirectoryName=
-SubpartIdSeparator=0
-SubpartFirstId=65
-NetFmtName=
-SpiceForceRefPrefix=0
-SpiceUseNetNumbers=0
-RptD_X=0
-RptD_Y=100
-RptLab=1
-LabSize=60
 
