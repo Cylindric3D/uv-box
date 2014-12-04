@@ -30,7 +30,6 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:borniers
-LIBS:components
 LIBS:controller-cache
 EELAYER 25 0
 EELAYER END
@@ -1016,4 +1015,10 @@ Wire Notes Line
 	6800 3050 1050 3050
 Text Notes 1050 3050 0    60   ~ 0
 Display
+Text Notes 2050 3300 2    60   ~ 0
+DS
+Text Notes 2050 3500 2    60   ~ 0
+SH_CP
+Text Notes 2050 3800 2    60   ~ 0
+ST_CP
 $EndSCHEMATC
