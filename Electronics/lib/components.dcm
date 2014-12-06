@@ -4,4 +4,8 @@ $CMP ATA3492BW
 D 4 Digit 7 Segment Led Common Anode Module
 $ENDCMP
 #
+$CMP Arduino_Pro_Micro
+D Arduino Pro Micro
+$ENDCMP
+#
 #End Doc Library
