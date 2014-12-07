@@ -1,34 +1,41 @@
 // LATCH_PIN is pin 11 on the 74HC595, and might be labelled ST_CP or SRCLK
-#define LATCH_PIN 3
+#define LATCH_PIN 2
 
 // DATA_PIN is pin 12 on the 74HC595, and might be labelled SH_CP or RCLK
-#define CLOCK_PIN 4
+#define CLOCK_PIN 3
 
 // DATA_PIN is pin 14 on the 74HC595, and might be labelled DS or SER
-#define DATA_PIN 2
+#define DATA_PIN 4
 
 const int digitPins[4] = {5,6,7,8};
  
-  
-const byte digit[10] =      //seven segment digits in bits
+// Bit values for defining connections between the shift-register and the LED segments
+#define BIT_A 1
+#define BIT_B 2
+#define BIT_C 4
+#define BIT_D 8
+#define BIT_E 16
+#define BIT_F 32
+#define BIT_G 64
+#define BIT_COL 128
+
+//seven segment digits in bits
+const byte digit[10] =      
 {
-   //EDFCAGB
-	B11111010, //0 
-	B00010010, //1
-	B11001110, //2
-	B01011110, //3
-	B00110110, //4
-	B01111100, //5
-	B11111100, //6
-	B00011010, //7
-	B11111110, //8
-	B00111110  //9
+	/* 0 */ BIT_A | BIT_B | BIT_C | BIT_D | BIT_E | BIT_F,
+	/* 1 */ BIT_A | BIT_B,
+	/* 2 */ BIT_A | BIT_B | BIT_D | BIT_F | BIT_G,
+	/* 3 */ BIT_A | BIT_B | BIT_C | BIT_D | BIT_G,
+	/* 4 */ BIT_B | BIT_C | BIT_F | BIT_G,
+	/* 5 */ BIT_A | BIT_C | BIT_D | BIT_F | BIT_G,
+	/* 6 */ BIT_A | BIT_C | BIT_D | BIT_E | BIT_F | BIT_G,
+	/* 7 */ BIT_A | BIT_B | BIT_C,
+	/* 8 */ BIT_A | BIT_B | BIT_C | BIT_D | BIT_E | BIT_F | BIT_G,
+	/* 9 */ BIT_A | BIT_B | BIT_C | BIT_F | BIT_G
 };
+
 int digitBuffer[4] = {0};
 int digitScan = 0;
-int flag=0;
-int soft_scaler = 0;
-
 
 void setup()
 {
@@ -41,36 +48,34 @@ void setup()
 	pinMode(DATA_PIN, OUTPUT);
 	
 	Serial.begin(9600);
-	Serial.println("Starting LED Exposure Controller.");
+	Serial.println("Started LED Exposure Controller.");
 }
 
 
 void updateDisp() 
 {
+	// Turn off all digits
 	for(byte j=0; j<4; j++)  
 	{
 		digitalWrite(digitPins[j], LOW);
 	}
 	
-	digitalWrite(LATCH_PIN, LOW);  
-	shiftOut(DATA_PIN, CLOCK_PIN, MSBFIRST, B11111111);
-	digitalWrite(LATCH_PIN, HIGH);
-
-	delayMicroseconds(50);
+	// Not sure why the example code was zeroing first
+	//digitalWrite(LATCH_PIN, LOW);  
+	//shiftOut(DATA_PIN, CLOCK_PIN, MSBFIRST, B11111111);
+	//digitalWrite(LATCH_PIN, HIGH);
+	//delayMicroseconds(50);
+	
+	// Turn on the current digit to display
 	digitalWrite(digitPins[digitScan], HIGH); 
 
+	// Turn on the segments to display
 	digitalWrite(LATCH_PIN, LOW);  
-//	if(digitScan==2)
-//	{
-//		shiftOut(DATA_PIN, CLOCK_PIN, MSBFIRST, ~(digit[digitBuffer[digitScan]] | B10000000)); //print the decimal point on the 3rd digit
-//	}
-//	else
-//	{
-		shiftOut(DATA_PIN, CLOCK_PIN, MSBFIRST, ~digit[digitBuffer[digitScan]]);
-//	}
+	shiftOut(DATA_PIN, CLOCK_PIN, MSBFIRST, ~digit[digitBuffer[digitScan]]);
 	digitalWrite(LATCH_PIN, HIGH);
-	digitScan++;
 	
+	// Prepare to move to the next digit on the next cycle
+	digitScan++;
 	if(digitScan>3) 
 	{
 		digitScan=0; 

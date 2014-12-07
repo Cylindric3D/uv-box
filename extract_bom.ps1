@@ -2,11 +2,13 @@ $executingScriptDirectory = Split-Path -Path $MyInvocation.MyCommand.Definition 
 
 $net_file_1 = "Electronics\controller\controller.net"
 $net_file_2 = "Electronics\led_panels\led_panels.net"
+$net_file_3 = "Electronics\digit_board\digit_board.net"
 $bom_File = "bom.csv"
 
 $bom_file = Join-Path $executingScriptDirectory $bom_file
 $net_file_1 = Join-Path $executingScriptDirectory $net_file_1
 $net_file_2 = Join-Path $executingScriptDirectory $net_file_2
+$net_file_3 = Join-Path $executingScriptDirectory $net_file_3
 
 Function ParseNetFile($netfile, $bomfile)
 {
@@ -86,3 +88,4 @@ Function ParseNetFile($netfile, $bomfile)
 
 ParseNetFile $net_file_1 $bom_file
 ParseNetFile $net_file_2 $bom_file
+ParseNetFile $net_file_3 $bom_file
