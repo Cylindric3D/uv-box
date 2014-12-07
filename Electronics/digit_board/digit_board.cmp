@@ -1,0 +1,17 @@
+Cmp-Mod V01 Created by Cvpcb (2014-12-04 BZR 5312)-product   date = 07/12/2014 00:08:34
+
+BeginCmp
+TimeStamp = /5483E8CC;
+Reference = LED_DISPLAY1;
+ValeurCmp = ATA3492BW;
+IdModule  = Cylindric:4DIG_7SEG_ATA3492BW;
+EndCmp
+
+BeginCmp
+TimeStamp = /5483E895;
+Reference = P1;
+ValeurCmp = LED_DISPLAY;
+IdModule  = Pin_Headers:Pin_Header_Straight_2x08;
+EndCmp
+
+EndListe
