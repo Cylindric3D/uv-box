@@ -36,8 +36,8 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
+Title "Digit Board"
+Date "07 December 2014"
 Rev ""
 Comp ""
 Comment1 ""
