@@ -5,3 +5,4 @@
 ~$*.xlsx
 *.bck
 Electronics/lib.pretty/
+_autosave-*
