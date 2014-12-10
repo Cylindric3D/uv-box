@@ -1,91 +1,115 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>UV Exposure Box by Cylindric3D</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="refresh" content="20" />
+		<title>Gator Dashboard</title>
 
-  </head>
-  <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/Cylindric3D/uv-box">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/Cylindric3D/uv-box/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/Cylindric3D/uv-box/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+	
+		<nav class="navbar navbar-default navbar-inverse" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">UV Exposure Box</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<div class="navbar-brand navbar-right">Project maintained by <a href="https://github.com/Cylindric3D">Cylindric3D</a></div>
+					<ul class="nav navbar-nav">
+						<li><a href="https://github.com/Cylindric3D/uv-box">View on GitHub</a></li>
+						<li><a href="https://github.com/Cylindric3D/uv-box/zipball/master">Zip</a></li>
+						<li><a href="https://github.com/Cylindric3D/uv-box/tarball/master">TAR</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	
+		<div class="container-fluid">
+			<h1>LED-Based UV Exposure Box</h1>
+			<p>A UV-Exposure box for creating home-made PCBs</p>
 
-    <div class="wrapper">
+			<h2>Preview</h2>
+			<p><img src="images/render.jpg" width="700" alt="UV Box Preview Render" /></p>
+			
+			<h2>The Parts of the Controller</h2>
+			<p>All these schematics will be on one PCB. They're just broken out here for clarity</p>
+			
+			<div class="row">
+				<div class="col-md-4">
+					<h3>The Power Circuit Schematic</h3>
+					<p><a href="images/schematic-controller-power.png"><img src="images/schematic-controller-power.small.png" alt="UV Box Schematic - Power" /></a></p>
+				</div>
+				<div class="col-md-4">
+					<h3>The Rotary-Encoder Schematic</h3>
+					<p><a href="images/schematic-controller-dial.png"><img src="images/schematic-controller-dial.small.png" alt="UV Box Schematic - Dial Input" /></a></p>
+				</div>
 
-      <section>
-        <div id="title">
-          <h1>UV Exposure Box</h1>
-          <p>A UV-Exposure box for creating home-made PCBs</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/Cylindric3D">Cylindric3D</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
+				<div class="col-md-4">
+					<h3>The Panel Power Schematic</h3>
+					<p><a href="images/schematic-controller-panel.png"><img src="images/schematic-controller-panel.small.png" alt="UV Box Schematic - Panel Control" /></a></p>
+				</div>
+			</div>
 
-        <h3><a id="led-based-uv-exposure-box" class="anchor" href="#led-based-uv-exposure-box" aria-hidden="true"><span class="octicon octicon-link"></span></a>LED-Based UV Exposure Box</h3>
-		<p><img src="images/render.jpg" width="700" alt="UV Box Preview Render" /></p>
-		
-		<h2>The Power Circuit Schematic</h2>
-		<p><a href="images/schematic-power.png"><img src="images/schematic-power.png" width="500" alt="UV Box Schematic - Power" /></a></p>
+			<div class="row">
+				<div class="col-md-4">
+					<h3>The Start Button Schematic</h3>
+					<p><a href="images/schematic-controller-switch.png"><img src="images/schematic-controller-switch.small.png" alt="UV Box Schematic - Start Button" /></a></p>
+				</div>
+				<div class="col-md-4">
+					<h3>The Arduino Header</h3>
+					<p><a href="images/schematic-controller-arduino.png"><img src="images/schematic-controller-arduino.small.png" alt="UV Box Schematic - Arduino" /></a></p>
+				</div>
+				<div class="col-md-4">
+					<h3>The Clock Display Schematics</h3>
+					<p><a href="images/schematic-controller-display.png"><img src="images/schematic-controller-display.small.png" alt="UV Box Schematic - Clock" /></a></p>
+				</div>
+			</div>
 
-		<h2>The Rotary-Encoder Schematic</h2>
-		<p><a href="images/schematic-dialinput.png"><img src="images/schematic-dialinput.png" width="500" alt="UV Box Schematic - Dial Input" /></a></p>
+			<h3>The Complete Controller Board</h3>
+			<div class="row">
+				<div class="col-md-6">
+					<a href="images/board-controller.png"><img src="images/board-controller.small.png" alt="UV Box Board - Controller" /></a>
+				</div>
+				<div class="col-md-6">
+					<a href="images/board-controller-3d.png"><img src="images/board-controller-3d.small.png" alt="UV Box Board - Controller 3D" /></a></p>
+				</div>
+			</div>
 
-		<h2>The Panel Power Schematic</h2>
-		<p><a href="images/schematic-panelcontrol.png"><img src="images/schematic-panelcontrol.png" width="500" alt="UV Box Schematic - Panel Control" /></a></p>
+			
 
-		<h2>The Start Button Schematic</h2>
-		<p><a href="images/schematic-switch.png"><img src="images/schematic-switch.png" width="500" alt="UV Box Schematic - Start Button" /></a></p>
+			<h2>The Parts of the Illumination Panels</h2>
 
-		<h2>The Arduino Header</h2>
-		<p><a href="images/schematic-arduinoheaders.png"><img src="images/schematic-arduinoheaders.png" width="500" alt="UV Box Schematic - Arduino" /></a></p>
-		
-		<h2>The Main Panel Schematics</h2>
-		<p><a href="images/schematic-panels.png"><img src="images/schematic-panels.png" width="500" alt="UV Box Schematic - Panels" /></a></p>
+			<h3>The Main Panel Schematics</h3>
+			<p><a href="images/schematic-panels.png"><img src="images/schematic-panels.small.png" alt="UV Box Schematic - Panels" /></a></p>
 
-		<h2>The Clock Display Schematics</h2>
-		<p><a href="images/schematic-display.png"><img src="images/schematic-display.png" width="500" alt="UV Box Schematic - Clock" /></a></p>
 
-		<h2>The Digit Board Schematics</h2>
-		<p><a href="images/schematic-digitboard.png"><img src="images/schematic-digitboard.png" width="500" alt="UV Box Schematic - Digit Board" /></a></p>
 
-		<h2>The Controller Board</h2>
-		<p><a href="images/board-controller.png"><img src="images/board-controller.png" width="500" alt="UV Box Board - Controller" /></a><br />
-		<a href="images/board-controller-3d.png"><img src="images/board-controller-3d.png" width="500" alt="UV Box Board - Controller 3D" /></a></p>
+			<h2>The Parts of the Display Screen</h2>
 
-		<h2>The Digit Board</h2>
-		<p><a href="images/board-digitboard.png"><img src="images/board-digitboard.png" width="500" alt="UV Box Board - Digit Board" /></a></p>
+			<h3>The Digit Board Schematics</h3>
+			<p><a href="images/schematic-digitboard.png"><img src="images/schematic-digitboard.small.png" alt="UV Box Schematic - Digit Board" /></a></p>
 
-      </section>
+			<h3>The Digit Board</h3>
+			<p><a href="images/board-digitboard.png"><img src="images/board-digitboard.small.png" alt="UV Box Board - Digit Board" /></a></p>
 
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-19841358-2");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
 
-  </body>
+		</div>
+				
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
 </html>

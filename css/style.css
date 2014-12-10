@@ -1,0 +1,11 @@
+body {
+	background-color: linen;
+}
+
+div.graph {
+	padding-bottom: 1em;
+}
+
+div.graph div.btn-group {
+	padding-top: 1px;
+}
