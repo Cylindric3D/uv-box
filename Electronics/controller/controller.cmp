@@ -1,161 +1,161 @@
-Cmp-Mod V01 Created by Cvpcb (2014-12-04 BZR 5312)-product   date = 06/12/2014 23:48:59
+Cmp-Mod V01 Created by Cvpcb (2014-12-07 BZR 5316)-product   date = 10/12/2014 14:30:27
 
 BeginCmp
-TimeStamp = /547E3173;
+TimeStamp = /54886463;
 Reference = C1;
 ValeurCmp = 0.1uF;
 IdModule  = Capacitors_ThroughHole:Capacitor4x3RM2.5;
 EndCmp
 
 BeginCmp
-TimeStamp = /547E3123;
+TimeStamp = /54886462;
 Reference = C2;
 ValeurCmp = 0.1uF;
 IdModule  = Capacitors_ThroughHole:Capacitor4x3RM2.5;
 EndCmp
 
 BeginCmp
-TimeStamp = /547E058A;
+TimeStamp = /54886477;
+Reference = LED_DISPLAY1;
+ValeurCmp = ATA3492BW;
+IdModule  = Cylindric:4_Digit-7_Segment_LED-ATA3492BW;
+EndCmp
+
+BeginCmp
+TimeStamp = /5488645A;
 Reference = P1;
 ValeurCmp = POWER;
 IdModule  = Connect:bornier2;
 EndCmp
 
 BeginCmp
-TimeStamp = /547C8F92;
+TimeStamp = /54886456;
 Reference = P2;
 ValeurCmp = PANEL_1;
 IdModule  = Connect:bornier2;
 EndCmp
 
 BeginCmp
-TimeStamp = /547C79D3;
+TimeStamp = /54886453;
 Reference = P3;
 ValeurCmp = PANEL_2;
 IdModule  = Connect:bornier2;
 EndCmp
 
 BeginCmp
-TimeStamp = /547DF01E;
+TimeStamp = /54886458;
 Reference = P4;
 ValeurCmp = DIAL;
 IdModule  = Connect:bornier3;
 EndCmp
 
 BeginCmp
-TimeStamp = /547E4594;
+TimeStamp = /54886464;
 Reference = P5;
 ValeurCmp = SWITCH;
 IdModule  = Connect:bornier2;
 EndCmp
 
 BeginCmp
-TimeStamp = /548109B2;
-Reference = P6;
-ValeurCmp = LED_DISPLAY;
-IdModule  = Pin_Headers:Pin_Header_Straight_2x08;
-EndCmp
-
-BeginCmp
-TimeStamp = /54836FA2;
+TimeStamp = /54886475;
 Reference = Q1;
-ValeurCmp = BUZ11;
+ValeurCmp = FET;
 IdModule  = Transistors_TO-220:TO-220_FET-GDS_Vertical;
 EndCmp
 
 BeginCmp
-TimeStamp = /5481239E;
+TimeStamp = /54886471;
 Reference = R1;
 ValeurCmp = 33R;
 IdModule  = Discret:R3;
 EndCmp
 
 BeginCmp
-TimeStamp = /547E9A46;
+TimeStamp = /5488645F;
 Reference = R2;
-ValeurCmp = 33R;
+ValeurCmp = 1k;
 IdModule  = Discret:R3;
 EndCmp
 
 BeginCmp
-TimeStamp = /5481167E;
+TimeStamp = /5488645E;
 Reference = R3;
-ValeurCmp = 33R;
+ValeurCmp = 330;
 IdModule  = Discret:R3;
 EndCmp
 
 BeginCmp
-TimeStamp = /5481161A;
+TimeStamp = /54886457;
 Reference = R4;
-ValeurCmp = 33R;
+ValeurCmp = 10k;
 IdModule  = Discret:R3;
 EndCmp
 
 BeginCmp
-TimeStamp = /54811717;
+TimeStamp = /54886470;
 Reference = R5;
 ValeurCmp = 33R;
 IdModule  = Discret:R3;
 EndCmp
 
 BeginCmp
-TimeStamp = /547E9AE5;
+TimeStamp = /5488646C;
 Reference = R6;
 ValeurCmp = 33R;
 IdModule  = Discret:R3;
 EndCmp
 
 BeginCmp
-TimeStamp = /548116AA;
+TimeStamp = /5488646D;
 Reference = R7;
 ValeurCmp = 33R;
 IdModule  = Discret:R3;
 EndCmp
 
 BeginCmp
-TimeStamp = /548116D7;
+TimeStamp = /54886468;
 Reference = R8;
 ValeurCmp = 33R;
 IdModule  = Discret:R3;
 EndCmp
 
 BeginCmp
-TimeStamp = /547CA019;
+TimeStamp = /54886469;
 Reference = R9;
-ValeurCmp = 10k;
+ValeurCmp = 33R;
 IdModule  = Discret:R3;
 EndCmp
 
 BeginCmp
-TimeStamp = /547E14EB;
+TimeStamp = /5488646E;
 Reference = R10;
-ValeurCmp = 330;
+ValeurCmp = 33R;
 IdModule  = Discret:R3;
 EndCmp
 
 BeginCmp
-TimeStamp = /547E156D;
+TimeStamp = /5488646F;
 Reference = R11;
-ValeurCmp = 1k;
+ValeurCmp = 33R;
 IdModule  = Discret:R3;
 EndCmp
 
 BeginCmp
-TimeStamp = /547E0874;
+TimeStamp = /5488645B;
 Reference = U1;
 ValeurCmp = LM317T;
 IdModule  = Power_Integrations:TO-220;
 EndCmp
 
 BeginCmp
-TimeStamp = /547E57E1;
+TimeStamp = /54886465;
 Reference = U2;
 ValeurCmp = 74HC595;
 IdModule  = Sockets_DIP:DIP-16__300;
 EndCmp
 
 BeginCmp
-TimeStamp = /548327E2;
+TimeStamp = /54886472;
 Reference = U3;
 ValeurCmp = Arduino_Pro_Micro;
 IdModule  = Cylindric:ArduinoProMicro;
