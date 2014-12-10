@@ -1,4 +1,4 @@
-update=07/12/2014 10:53:59
+update=10/12/2014 01:19:54
 version=1
 last_client=kicad
 [cvpcb]
@@ -41,7 +41,7 @@ LibName8=../lib/cylindric
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
-PlotDirectoryName=
+PlotDirectoryName=../export/
 SubpartIdSeparator=0
 SubpartFirstId=65
 NetFmtName=

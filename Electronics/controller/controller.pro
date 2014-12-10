@@ -1,4 +1,4 @@
-update=07/12/2014 10:52:42
+update=10/12/2014 01:21:06
 last_client=kicad
 [general]
 version=1
@@ -36,7 +36,7 @@ ModuleOutlineThickness=0.15
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
-PlotDirectoryName=
+PlotDirectoryName=../export/
 SubpartIdSeparator=0
 SubpartFirstId=65
 NetFmtName=

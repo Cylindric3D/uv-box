@@ -9,9 +9,9 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "Controller"
-Date "1 dec 2014"
-Rev ""
+Title "UV Exposure Box - Controller"
+Date "10 December 2014"
+Rev "1.0"
 Comp ""
 Comment1 ""
 Comment2 ""
