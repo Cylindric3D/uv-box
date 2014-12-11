@@ -110,13 +110,13 @@ D3
 Text Label 8950 1750 2    60   ~ 0
 D4
 Text Label 8950 1850 2    60   ~ 0
-D8
-Text Label 8950 1950 2    60   ~ 0
-D7
-Text Label 8950 2050 2    60   ~ 0
-D6
-Text Label 8950 2150 2    60   ~ 0
 D5
+Text Label 8950 1950 2    60   ~ 0
+D6
+Text Label 8950 2050 2    60   ~ 0
+D7
+Text Label 8950 2150 2    60   ~ 0
+D8
 Text Label 10450 2250 0    60   ~ 0
 D16
 Text Label 10450 2150 0    60   ~ 0
@@ -124,7 +124,7 @@ D14
 Text Label 10450 2050 0    60   ~ 0
 D15
 Text Label 3800 1550 2    60   ~ 0
-D7
+D6
 $Comp
 L GND #PWR03
 U 1 1 54886459
@@ -137,9 +137,9 @@ F 3 "" H 5650 1400 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 5650 900  2    60   ~ 0
-D14
+D9
 Text Label 5650 1800 2    60   ~ 0
-D15
+D8
 $Comp
 L CONN_2 P1
 U 1 1 5488645A
@@ -421,7 +421,7 @@ F 1 "33R" V 1657 5351 40  0000 C CNN
 F 2 "Discret:R3" V 1580 5350 30  0001 C CNN
 F 3 "~" H 1650 5350 30  0000 C CNN
 	1    1650 5350
-	0    1    1    0   
+	0    -1   -1   0   
 $EndComp
 Text Label 1750 5150 2    60   ~ 0
 D10
@@ -640,7 +640,6 @@ Wire Wire Line
 	3200 3250 3350 3250
 Text Label 3350 3650 0    60   ~ 0
 COL
-NoConn ~ 9100 2250
 Wire Notes Line
 	10950 750  10950 2800
 Wire Notes Line
@@ -776,4 +775,8 @@ Text Label 10450 1950 0    60   ~ 0
 A0
 Text Label 4350 1300 2    60   ~ 0
 12VGND
+Wire Wire Line
+	9100 2250 8950 2250
+Text Label 8950 2250 2    60   ~ 0
+D9
 $EndSCHEMATC
