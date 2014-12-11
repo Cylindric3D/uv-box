@@ -45,6 +45,9 @@ LibName27=opto
 LibName28=atmel
 LibName29=contrib
 LibName30=valves
+LibName31=../lib/borniers
+LibName32=../lib/cylindric
+
 [general]
 version=1
 [pcbnew]

@@ -1,3 +1,3 @@
 (fp_lib_table
-  (lib (name Cylindric)(type Github)(uri https://github.com/Cylindric3D/KicadComponents.pretty)(options "")(descr "Cylindric's Components."))
+  (lib (name Cylindric)(type Github)(uri https://github.com/Cylindric3D/KicadComponents.pretty)(options "allow_pretty_writing_to_this_dir=C:\Users\Mark\Documents\Dev\KicadComponents.pretty")(descr "Cylindric's Components."))
 )

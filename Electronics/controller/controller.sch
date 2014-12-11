@@ -3,8 +3,35 @@ LIBS:power
 LIBS:device
 LIBS:transistors
 LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:special
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:borniers
+LIBS:cylindric
 LIBS:controller-cache
-LIBS:digit_board-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -98,17 +125,6 @@ Text Label 10450 2050 0    60   ~ 0
 D15
 Text Label 3800 1550 2    60   ~ 0
 D16
-$Comp
-L CONN_3 P4
-U 1 1 54886458
-P 6700 1350
-F 0 "P4" V 6650 1350 50  0000 C CNN
-F 1 "DIAL" V 6750 1350 40  0000 C CNN
-F 2 "Connect:bornier3" H 6700 1350 60  0001 C CNN
-F 3 "" H 6700 1350 60  0000 C CNN
-	1    6700 1350
-	1    0    0    -1  
-$EndComp
 $Comp
 L GND #PWR03
 U 1 1 54886459
@@ -242,19 +258,8 @@ F 3 "" H 5950 1150 60  0000 C CNN
 	1    5950 1150
 	1    0    0    -1  
 $EndComp
-$Comp
-L CONN_2 P5
-U 1 1 54886464
-P 8050 1250
-F 0 "P5" V 8000 1250 40  0000 C CNN
-F 1 "SWITCH" V 8100 1250 40  0000 C CNN
-F 2 "Connect:bornier2" H 8050 1250 60  0001 C CNN
-F 3 "" H 8050 1250 60  0000 C CNN
-	1    8050 1250
-	1    0    0    1   
-$EndComp
-Text Label 7600 900  2    60   ~ 0
-D10
+Text Label 7400 1150 2    60   ~ 0
+A0
 Text Notes 7150 750  0    60   ~ 0
 Switch Input
 $Comp
@@ -335,12 +340,12 @@ $EndComp
 $Comp
 L GND #PWR010
 U 1 1 5488646A
-P 7450 1450
-F 0 "#PWR010" H 7450 1450 30  0001 C CNN
-F 1 "GND" H 7450 1380 30  0001 C CNN
-F 2 "" H 7450 1450 60  0000 C CNN
-F 3 "" H 7450 1450 60  0000 C CNN
-	1    7450 1450
+P 8100 1250
+F 0 "#PWR010" H 8100 1250 30  0001 C CNN
+F 1 "GND" H 8100 1180 30  0001 C CNN
+F 2 "" H 8100 1250 60  0000 C CNN
+F 3 "" H 8100 1250 60  0000 C CNN
+	1    8100 1250
 	1    0    0    -1  
 $EndComp
 Text Notes 800  3000 0    60   ~ 0
@@ -419,13 +424,13 @@ F 3 "~" H 1650 5350 30  0000 C CNN
 	0    1    1    0   
 $EndComp
 Text Label 1750 5150 2    60   ~ 0
-D7
+D10
 Text Label 1750 5250 2    60   ~ 0
-D8
+D16
 Text Label 1750 5050 2    60   ~ 0
-D6
+D14
 Text Label 1750 4950 2    60   ~ 0
-D5
+D15
 $Comp
 L Arduino_Pro_Micro U3
 U 1 1 54886472
@@ -439,7 +444,6 @@ F 3 "" H 9675 1900 60  0000 C CNN
 $EndComp
 NoConn ~ 9100 1350
 NoConn ~ 9100 1450
-NoConn ~ 10300 1950
 NoConn ~ 10300 1850
 NoConn ~ 10300 1750
 NoConn ~ 10300 1650
@@ -488,11 +492,9 @@ Connection ~ 3950 1550
 Wire Wire Line
 	3950 2250 3950 2350
 Wire Wire Line
-	5650 1800 6200 1800
+	5650 1800 6550 1800
 Wire Wire Line
-	6200 1800 6200 1450
-Wire Wire Line
-	5650 1350 6350 1350
+	5650 1350 6200 1350
 Wire Wire Line
 	1450 1400 1850 1400
 Connection ~ 1650 1400
@@ -552,13 +554,7 @@ Wire Notes Line
 Wire Notes Line
 	10950 2800 8450 2800
 Wire Wire Line
-	6200 1450 6350 1450
-Wire Wire Line
-	6350 1250 6200 1250
-Wire Wire Line
-	6200 1250 6200 900 
-Wire Wire Line
-	6200 900  5650 900 
+	5650 900  6550 900 
 Wire Wire Line
 	5650 1350 5650 1400
 Connection ~ 5950 1350
@@ -572,12 +568,6 @@ Wire Notes Line
 	6850 750  6850 1900
 Wire Notes Line
 	6850 1900 5350 1900
-Wire Wire Line
-	7700 1350 7450 1350
-Wire Wire Line
-	7700 1150 7600 1150
-Wire Wire Line
-	7600 1150 7600 900 
 Wire Notes Line
 	7150 750  8250 750 
 Wire Notes Line
@@ -614,8 +604,6 @@ Wire Wire Line
 	3200 3850 3350 3850
 Wire Wire Line
 	3200 3950 3350 3950
-Wire Wire Line
-	7450 1350 7450 1450
 Wire Wire Line
 	9100 1550 8950 1550
 Wire Wire Line
@@ -750,4 +738,40 @@ Wire Notes Line
 	6200 5950 800  5950
 Wire Notes Line
 	800  5950 800  3000
+$Comp
+L Encoder ENC1
+U 1 1 5488F621
+P 6500 1350
+F 0 "ENC1" H 6375 1575 60  0000 C CNN
+F 1 "Encoder" H 6500 1475 60  0000 C CNN
+F 2 "Cylindric:ALPS_Encoder-EC12E2420404" H 6500 1400 60  0001 C CNN
+F 3 "" H 6500 1400 60  0000 C CNN
+	1    6500 1350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6550 900  6550 950 
+Wire Wire Line
+	6550 1800 6550 1750
+$Comp
+L SW_PUSH SW1
+U 1 1 54890306
+P 7700 1150
+F 0 "SW1" H 7850 1260 50  0000 C CNN
+F 1 "SW_PUSH" H 7700 1070 50  0000 C CNN
+F 2 "Discret:SW_PUSH-12mm" H 7700 1150 60  0001 C CNN
+F 3 "" H 7700 1150 60  0000 C CNN
+	1    7700 1150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 1150 7250 1150
+Wire Wire Line
+	8000 1150 8100 1150
+Wire Wire Line
+	8100 1150 8100 1250
+Wire Wire Line
+	10300 1950 10450 1950
+Text Label 10450 1950 0    60   ~ 0
+A0
 $EndSCHEMATC

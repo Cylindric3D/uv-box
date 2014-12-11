@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by Cvpcb (2014-12-07 BZR 5316)-product   date = 10/12/2014 14:30:27
+Cmp-Mod V01 Created by Cvpcb (2014-12-04 BZR 5312)-product   date = 11/12/2014 00:58:23
 
 BeginCmp
 TimeStamp = /54886463;
@@ -12,6 +12,13 @@ TimeStamp = /54886462;
 Reference = C2;
 ValeurCmp = 0.1uF;
 IdModule  = Capacitors_ThroughHole:Capacitor4x3RM2.5;
+EndCmp
+
+BeginCmp
+TimeStamp = /5488F621;
+Reference = ENC1;
+ValeurCmp = Encoder;
+IdModule  = Cylindric:ALPS_Encoder-EC12E2420404;
 EndCmp
 
 BeginCmp
@@ -39,20 +46,6 @@ BeginCmp
 TimeStamp = /54886453;
 Reference = P3;
 ValeurCmp = PANEL_2;
-IdModule  = Connect:bornier2;
-EndCmp
-
-BeginCmp
-TimeStamp = /54886458;
-Reference = P4;
-ValeurCmp = DIAL;
-IdModule  = Connect:bornier3;
-EndCmp
-
-BeginCmp
-TimeStamp = /54886464;
-Reference = P5;
-ValeurCmp = SWITCH;
 IdModule  = Connect:bornier2;
 EndCmp
 
@@ -138,6 +131,13 @@ TimeStamp = /5488646F;
 Reference = R11;
 ValeurCmp = 33R;
 IdModule  = Discret:R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /54890306;
+Reference = SW1;
+ValeurCmp = SW_PUSH;
+IdModule  = Discret:SW_PUSH-12mm;
 EndCmp
 
 BeginCmp
