@@ -1,11 +1,18 @@
+# KiCad backup files
 *.bak
-*.wings~
-*.kicad_pcb-bak
-~$*.SLDPRT
-~$*.xlsx
 *.bck
-Electronics/lib.pretty/
+*.kicad_pcb-bak
+*.wings~
+$*.pro
+$*.sch
 _autosave-*
+
+# SolidWorks Temp Files
+~$*.SLDPRT
+~$*.SLDASM
+
+# Project-specific ignores
+~$*.xlsx
+Electronics/lib.pretty/
 Electronics/plots/
 Electronics/export/
-~$*.SLDASM
