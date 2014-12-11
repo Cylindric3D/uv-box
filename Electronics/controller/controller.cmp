@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by Cvpcb (2014-12-04 BZR 5312)-product   date = 11/12/2014 00:58:23
+Cmp-Mod V01 Created by Cvpcb (2014-12-11 BZR 5320)-product   date = 11/12/2014 13:49:43
 
 BeginCmp
 TimeStamp = /54886463;
@@ -144,7 +144,7 @@ BeginCmp
 TimeStamp = /5488645B;
 Reference = U1;
 ValeurCmp = LM317T;
-IdModule  = Power_Integrations:TO-220;
+IdModule  = Transistors_TO-220:TO-220_Neutral123_Horizontal;
 EndCmp
 
 BeginCmp

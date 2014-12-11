@@ -124,7 +124,7 @@ D14
 Text Label 10450 2050 0    60   ~ 0
 D15
 Text Label 3800 1550 2    60   ~ 0
-D16
+D7
 $Comp
 L GND #PWR03
 U 1 1 54886459
@@ -774,4 +774,6 @@ Wire Wire Line
 	10300 1950 10450 1950
 Text Label 10450 1950 0    60   ~ 0
 A0
+Text Label 4350 1300 2    60   ~ 0
+12VGND
 $EndSCHEMATC
