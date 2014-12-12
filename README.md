@@ -1,3 +1,8 @@
+Note that documentation and schematics are also available as images in the [GitHub Pages](cylindric3d.github.io/uv-box/) site for this project.
+
+![Controller Schematic](http://cylindric3d.github.io/uv-box/images/schematic-controller.small.png)
+![Controller Board](http://cylindric3d.github.io/uv-box/images/board-controller.small.png)
+
 Important Plots
 ===============
 * Controller Schematic
