@@ -37,9 +37,9 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "Digit Board"
-Date "07 December 2014"
-Rev ""
+Title "UV Exposure Box - Controller Board"
+Date "12 December 2014"
+Rev "1"
 Comp ""
 Comment1 ""
 Comment2 ""
