@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by Cvpcb (2014-12-11 BZR 5320)-product   date = 11/12/2014 13:49:43
+Cmp-Mod V01 Created by Cvpcb (2014-12-11 BZR 5320)-product   date = 15/12/2014 13:33:56
 
 BeginCmp
 TimeStamp = /54886463;
@@ -32,28 +32,28 @@ BeginCmp
 TimeStamp = /5488645A;
 Reference = P1;
 ValeurCmp = POWER;
-IdModule  = Connect:bornier2;
+IdModule  = Pin_Headers:Pin_Header_Angled_1x02;
 EndCmp
 
 BeginCmp
 TimeStamp = /54886456;
 Reference = P2;
 ValeurCmp = PANEL_1;
-IdModule  = Connect:bornier2;
+IdModule  = Pin_Headers:Pin_Header_Angled_1x02;
 EndCmp
 
 BeginCmp
 TimeStamp = /54886453;
 Reference = P3;
 ValeurCmp = PANEL_2;
-IdModule  = Connect:bornier2;
+IdModule  = Pin_Headers:Pin_Header_Angled_1x02;
 EndCmp
 
 BeginCmp
 TimeStamp = /54886475;
 Reference = Q1;
 ValeurCmp = FET;
-IdModule  = Transistors_TO-220:TO-220_FET-GDS_Vertical;
+IdModule  = Transistors_TO-220:TO-220_FET-GDS_Horizontal;
 EndCmp
 
 BeginCmp
@@ -131,6 +131,20 @@ TimeStamp = /5488646F;
 Reference = R11;
 ValeurCmp = 33R;
 IdModule  = Discret:R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /548F1F3E;
+Reference = R12;
+ValeurCmp = 100R;
+IdModule  = Discret:R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /548F1AA5;
+Reference = SP1;
+ValeurCmp = SPEAKER;
+IdModule  = Pin_Headers:Pin_Header_Angled_1x02;
 EndCmp
 
 BeginCmp
