@@ -1,13 +1,13 @@
 Note that documentation and schematics are also available as images in the [GitHub Pages](cylindric3d.github.io/uv-box/) site for this project.
 
 ![Controller Schematic](http://cylindric3d.github.io/uv-box/images/schematic-controller.small.png)
-![Controller Board](http://cylindric3d.github.io/uv-box/images/board-controller.small.png)
+![Controller Board](http://cylindric3d.github.io/uv-box/images/board-controller-cu.small.png)
 
 Important Plots
 ===============
 * Controller Schematic
-* Controller Board: F.Cu
 * Controller Board: B.Cu
+* Controller Board: F.SilkS
 * LED Panels Schematic
 * LED Panels Board: B.Cu
 
