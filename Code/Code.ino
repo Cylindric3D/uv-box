@@ -22,7 +22,8 @@ const int CLOCK_PIN = 3;
 const int DATA_PIN = 4;
 
 // digitPins are the four pins connected to the four anodes of the display, left to right
-const int digitPins[4] = {15,14,10,16};
+//const int digitPins[4] = {15, 14, 10, 16};
+const int digitPins[4] = {7, 11, 10, 12};
 
 // Bit values for defining connections between the shift-register and the LED segments
 const int SHIFT_PIN_1  =   1;
@@ -49,7 +50,14 @@ const int BIT_COL = SHIFT_PIN_4;
 /* ***********************************************/
 
 //seven segment digits in bits
-const byte digit[10] =      
+//  AAAA
+// F    B
+// F    B
+//  GGGG 
+// E    C 
+// E    C 
+//  DDDD
+const byte digit[18] =      
 {
 	/* 0 */ BIT_A | BIT_B | BIT_C | BIT_D | BIT_E | BIT_F,
 	/* 1 */ BIT_A | BIT_B,
@@ -60,7 +68,15 @@ const byte digit[10] =
 	/* 6 */ BIT_A | BIT_C | BIT_D | BIT_E | BIT_F | BIT_G,
 	/* 7 */ BIT_A | BIT_B | BIT_C,
 	/* 8 */ BIT_A | BIT_B | BIT_C | BIT_D | BIT_E | BIT_F | BIT_G,
-	/* 9 */ BIT_A | BIT_B | BIT_C | BIT_F | BIT_G
+	/* 9 */ BIT_A | BIT_B | BIT_C | BIT_F | BIT_G,
+	/* 10 */ BIT_A,
+	/* 11 */ BIT_B,
+	/* 12 */ BIT_C,
+	/* 13 */ BIT_D,
+	/* 14 */ BIT_E,
+	/* 15 */ BIT_F,
+	/* 16 */ BIT_G,
+	/* 17 */ BIT_COL
 };
 
 /* ***********************************************/
@@ -70,7 +86,7 @@ const byte digit[10] =
 int timer_seconds = 120;
 
 // Refresh-period of the display
-int refresh_millis = 100;
+int refresh_millis = 1000;
 
 
 /* ***********************************************/
@@ -97,6 +113,8 @@ void setup()
 
 void updateDisp() 
 {
+	//digitScan=3;
+
 	// Turn off all digits
 	for(byte j=0; j<4; j++)  
 	{
@@ -107,10 +125,10 @@ void updateDisp()
 	byte valueToShift = ~digit[digitBuffer[digitScan]];
 	
 	// See if we need to turn on the colon or not.
-	if(digitBuffer[4] == 1)
-	{
-		valueToShift = valueToShift || BIT_COL;
-	}
+	//if(digitBuffer[4] == 1)
+	//{
+	//	valueToShift = valueToShift || BIT_COL;
+	//}
 	
 	// Turn on the current digit to display.
 	digitalWrite(digitPins[digitScan], HIGH);
@@ -160,17 +178,21 @@ void loop()
 	static unsigned long last_update = 0;
 	int minutesPart = 0;
 	int secondsPart = 0;
+	
+	static int num = 0;
 	if(last_update + refresh_millis < millis())
 	{
 		minutesPart = seconds_on_the_clock / 60;
 		secondsPart = seconds_on_the_clock % 60;
 
-		digitBuffer[0] = minutesPart / 10;
-		digitBuffer[1] = minutesPart % 10;
-		digitBuffer[2] = secondsPart / 10;
-		digitBuffer[3] = minutesPart % 10;
+		digitBuffer[0] = num;//minutesPart / 10;
+		digitBuffer[1] = num;//minutesPart % 10;
+		digitBuffer[2] = num;//secondsPart / 10;
+		digitBuffer[3] = num;//minutesPart % 10;
+		digitBuffer[4] = 0;
 		updateDisp();
 		
 		last_update = millis();
+		num++;
 	}
 }
