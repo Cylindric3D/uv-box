@@ -3,97 +3,101 @@
 
 Clock::Clock()
 {
-	digit[0] = BIT_A | BIT_B | BIT_C | BIT_D | BIT_E | BIT_F;
-	digit[1] = BIT_B | BIT_C;
-	digit[2] = BIT_A | BIT_B | BIT_D | BIT_E | BIT_G;
-	digit[3] = BIT_A | BIT_B | BIT_C | BIT_D | BIT_G;
-	digit[4] = BIT_B | BIT_C | BIT_F | BIT_G;
-	digit[5] = BIT_A | BIT_C | BIT_D | BIT_F | BIT_G;
-	digit[6] = BIT_A | BIT_C | BIT_D | BIT_E | BIT_F | BIT_G;
-	digit[7] = BIT_A | BIT_B | BIT_C;
-	digit[8] = BIT_A | BIT_B | BIT_C | BIT_D | BIT_E | BIT_F | BIT_G;
-	digit[9] = BIT_A | BIT_B | BIT_C | BIT_F | BIT_G;
+	_latch_pin = -1;
+	_clock_pin = -1;
+	_data_pin = -1;
 	
-	clockTimeMillis = 0;
-	clockStartTime = 0;
-	colonIsBlinking = false;
-	colonEnabled = false;
-	countdownRunning = false;
-	countdownMillis = 0;
-	digitScan = 0;
-	countdownAlarm = false;
-	lastColonChange = 0;
+	_digit[0] = BIT_A | BIT_B | BIT_C | BIT_D | BIT_E | BIT_F;
+	_digit[1] = BIT_B | BIT_C;
+	_digit[2] = BIT_A | BIT_B | BIT_D | BIT_E | BIT_G;
+	_digit[3] = BIT_A | BIT_B | BIT_C | BIT_D | BIT_G;
+	_digit[4] = BIT_B | BIT_C | BIT_F | BIT_G;
+	_digit[5] = BIT_A | BIT_C | BIT_D | BIT_F | BIT_G;
+	_digit[6] = BIT_A | BIT_C | BIT_D | BIT_E | BIT_F | BIT_G;
+	_digit[7] = BIT_A | BIT_B | BIT_C;
+	_digit[8] = BIT_A | BIT_B | BIT_C | BIT_D | BIT_E | BIT_F | BIT_G;
+	_digit[9] = BIT_A | BIT_B | BIT_C | BIT_F | BIT_G;
+	
+	_clock_time_ms = 0;
+	_clock_started_ms = 0;
+	_colon_blinking = false;
+	_colon_enabled = false;
+	_countdown_running = false;
+	_countdown_ms = 0;
+	_digit_scan = 0;
+	_countdown_alarm = false;
+	_colon_lastchanged_ms = 0;
 }
 
 void Clock::setEncoderPins(int latch, int clock, int data)
 {
-	LATCH_PIN = latch;
-	CLOCK_PIN = clock;
-	DATA_PIN = data;
-	pinMode(LATCH_PIN, OUTPUT);
-	pinMode(CLOCK_PIN, OUTPUT);
-	pinMode(DATA_PIN, OUTPUT);
+	_latch_pin = latch;
+	_clock_pin = clock;
+	_data_pin = data;
+	pinMode(_latch_pin, OUTPUT);
+	pinMode(_clock_pin, OUTPUT);
+	pinMode(_data_pin, OUTPUT);
 }
 
 void Clock::setDigitPins(int digit_1, int digit_2, int digit_3, int digit_4)
 {
-	digitPins[0] = digit_1;
-	digitPins[1] = digit_2;
-	digitPins[2] = digit_3;
-	digitPins[3] = digit_4;
+	_digit_pins[0] = digit_1;
+	_digit_pins[1] = digit_2;
+	_digit_pins[2] = digit_3;
+	_digit_pins[3] = digit_4;
 	for(int i=0;i<4;i++)
 	{
-		pinMode(digitPins[i],OUTPUT);
+		pinMode(_digit_pins[i],OUTPUT);
 	}
 }
 
-unsigned long Clock::getSeconds()
+int Clock::getSeconds()
 {
-	return clockTimeMillis / 1000;
+	return _clock_time_ms / 1000;
 }
 
 bool Clock::getAlarm()
 {
-	return countdownAlarm;
+	return _countdown_alarm;
 }
 
 void Clock::update()
 {
 	// See if we need to turn on the colon or not.
-	if(colonIsBlinking)
+	if(_colon_blinking)
 	{
-		if(lastColonChange + 500 < millis())
+		if(_colon_lastchanged_ms + 500 < millis())
 		{
-			colonEnabled = !colonEnabled;
-			lastColonChange = millis();
+			_colon_enabled = !_colon_enabled;
+			_colon_lastchanged_ms = millis();
 		}
 	}
 
 	// Handle any running countdown.
-	if(countdownRunning)
+	if(_countdown_running)
 	{
 		// Calculate how long the clock has been running.
-		unsigned long clock_running_millis = (millis() - clockStartTime);
+		unsigned long clock_running_millis = (millis() - _clock_started_ms);
 		
 		// Update how much time is left on the clock.
-		long ms = countdownMillis - clock_running_millis;
+		long ms = _countdown_ms - clock_running_millis;
 		if(ms < 0) {
 			ms = 0;
-			countdownRunning = false;
-			countdownAlarm = true;
+			_countdown_running = false;
+			_countdown_alarm = true;
 		}
 		
-		clockTimeMillis = ms;
+		_clock_time_ms = ms;
 	}
 
 	// Set the digits to display
-	int minutesPart = (clockTimeMillis / 1000) / 60;
-	int secondsPart = (clockTimeMillis / 1000) % 60;
+	int minutesPart = (_clock_time_ms / 1000) / 60;
+	int secondsPart = (_clock_time_ms / 1000) % 60;
 
-	digitBuffer[0] = minutesPart / 10;
-	digitBuffer[1] = minutesPart % 10;
-	digitBuffer[2] = secondsPart / 10;
-	digitBuffer[3] = secondsPart % 10;
+	_digit_buffer[0] = minutesPart / 10;
+	_digit_buffer[1] = minutesPart % 10;
+	_digit_buffer[2] = secondsPart / 10;
+	_digit_buffer[3] = secondsPart % 10;
 	
 	display();
 }
@@ -104,66 +108,66 @@ void Clock::display()
 	// Turn off all digits
 	for(byte j=0; j<4; j++)  
 	{
-		digitalWrite(digitPins[j], LOW);
+		digitalWrite(_digit_pins[j], LOW);
 	}
 	
 	// Reset all segments
-	digitalWrite(LATCH_PIN, LOW);  
-	shiftOut(DATA_PIN, CLOCK_PIN, MSBFIRST, B11111111);
-	digitalWrite(LATCH_PIN, HIGH);
+	digitalWrite(_latch_pin, LOW);  
+	shiftOut(_data_pin, _clock_pin, MSBFIRST, B11111111);
+	digitalWrite(_latch_pin, HIGH);
 	delayMicroseconds(50);
 
 	// Get the bit-pattern to display.
 	byte valueToShift = 0;
-	if(digitBuffer[digitScan] != -1)
+	if(_digit_buffer[_digit_scan] != -1)
 	{
-		valueToShift = digit[digitBuffer[digitScan]];
+		valueToShift = _digit[_digit_buffer[_digit_scan]];
 	}
 	
 	// See if we need to turn on the colon or not.
-	static unsigned long lastColonChange = 0;
-	if(colonEnabled)
+	static unsigned long _colon_lastchanged_ms = 0;
+	if(_colon_enabled)
 	{
 		valueToShift = valueToShift | BIT_COL;
 	}
 	
 	// Turn on the current digit to display.
-	digitalWrite(digitPins[digitScan], HIGH);
+	digitalWrite(_digit_pins[_digit_scan], HIGH);
 
 	// Turn on the segments to display.
-	digitalWrite(LATCH_PIN, LOW);  
-	shiftOut(DATA_PIN, CLOCK_PIN, MSBFIRST, ~valueToShift);
-	digitalWrite(LATCH_PIN, HIGH);
+	digitalWrite(_latch_pin, LOW);  
+	shiftOut(_data_pin, _clock_pin, MSBFIRST, ~valueToShift);
+	digitalWrite(_latch_pin, HIGH);
 	
 	// Move on to the next digit on the next cycle.
-	digitScan++;
-	if(digitScan > 3)
+	_digit_scan++;
+	if(_digit_scan > 3)
 	{
-		digitScan = 0;
+		_digit_scan = 0;
 	}
 
 }
 
 void Clock::setSeconds(int seconds)
 {	
-	clockTimeMillis = (unsigned long)seconds * 1000;
-	countdownMillis = (unsigned long)seconds * 1000;
+	_clock_time_ms = (unsigned long)seconds * 1000;
+	_countdown_ms = _clock_time_ms;
 }
 
 void Clock::startCountdown()
 {
-	countdownRunning = true;
-	clockStartTime = millis();
-	lastColonChange = clockStartTime;
+	_countdown_running = true;
+	_clock_started_ms = millis();
+	_colon_lastchanged_ms = _clock_started_ms;
 }
 
 void Clock::startBlinkingColon()
 {
-	colonIsBlinking = true;
+	_colon_blinking = true;
 }
 
 void Clock::stopBlinkingColon(bool final_state)
 {
-	colonIsBlinking = false;
-	colonEnabled = final_state;
+	_colon_blinking = false;
+	_colon_enabled = final_state;
 }

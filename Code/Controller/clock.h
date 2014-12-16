@@ -3,10 +3,6 @@
 
 #include "Arduino.h"
 
-// digitPins are the four pins connected to the four anodes of the display, left to right
-//const int digitPins[4] = {15, 14, 10, 16};
-const int digitPins[4] = {7, 11, 10, 12};
-
 // Bit values for defining connections between the shift-register and the LED segments
 const int SHIFT_PIN_1  =   1;
 const int SHIFT_PIN_2  =   2;
@@ -29,47 +25,63 @@ const byte BIT_COL = SHIFT_PIN_5;
 class Clock
 {
 	public:
+		// Constructor
 		Clock();
+		
+		// Set the pins connected to the shift register.
 		void setEncoderPins(int latch, int clock, int data);
+		
+		// Set the pins connected to the four digit-enable pins.
 		void setDigitPins(int digit_1, int digit_2, int digit_3, int digit_4);
+		
+		// Call update to recalculate the state of the clock and to cause an update.
 		void update();
+		
+		// Set the current time on the clock, in seconds.
 		void setSeconds(int seconds);
-		void setDisplay(int number);
+		
+		// Start counting down the clock. A time must first be set with setSecods().
 		void startCountdown();
+		
+		// Start blinking the colon.
 		void startBlinkingColon();
+		
+		// Stop blinking the colon, leaving it in the final_state.
 		void stopBlinkingColon(bool final_state = false);
 		
-		unsigned long getSeconds();
+		// Get the current time on the clock, in seconds.
+		int getSeconds();
+		
+		// Get the current state of the alarm. Returns true if a countdown has expired; else false.
 		bool getAlarm();
 		
 		
 	private:
-		// LATCH_PIN is pin 11 on the 74HC595, and might be labelled ST_CP or SRCLK
-		int LATCH_PIN;
+		// _latch_pin is pin 11 on the 74HC595, and might be labelled ST_CP or SRCLK
+		int _latch_pin;
 
-		// DATA_PIN is pin 12 on the 74HC595, and might be labelled SH_CP or RCLK
-		int CLOCK_PIN;
+		// _data_pin is pin 12 on the 74HC595, and might be labelled SH_CP or RCLK
+		int _clock_pin;
 
-		// DATA_PIN is pin 14 on the 74HC595, and might be labelled DS or SER
-		int DATA_PIN;
+		// _data_pin is pin 14 on the 74HC595, and might be labelled DS or SER
+		int _data_pin;
 
-		// digitPins are the four pins connected to the four anodes of the display, left to right
-		//const int digitPins[4] = {15, 14, 10, 16};
-		int digitPins[4];
+		// _digit_pins are the four pins connected to the four anodes of the display, left to right
+		int _digit_pins[4];
 
 		//seven segment digits in bits
-		byte digit[10];
+		byte _digit[10];
 		
-		int digitBuffer[4];
-		int digitScan;
-		bool colonIsBlinking;
-		bool colonEnabled;
-		bool countdownRunning;
-		bool countdownAlarm;
-		unsigned long clockTimeMillis;
-		unsigned long clockStartTime;
-		unsigned long countdownMillis;
-		unsigned long lastColonChange;
+		int _digit_buffer[4];
+		int _digit_scan;
+		bool _colon_blinking;
+		bool _colon_enabled;
+		bool _countdown_running;
+		bool _countdown_alarm;
+		unsigned long _clock_time_ms;
+		unsigned long _clock_started_ms;
+		unsigned long _countdown_ms;
+		unsigned long _colon_lastchanged_ms;
 
 		void display();
 		void updateClock();
