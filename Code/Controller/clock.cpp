@@ -29,7 +29,7 @@ Clock::Clock()
 	_colon_lastchanged_ms = 0;
 }
 
-void Clock::setEncoderPins(int latch, int clock, int data)
+void Clock::setShifterPins(int latch, int clock, int data)
 {
 	_latch_pin = latch;
 	_clock_pin = clock;
@@ -59,6 +59,11 @@ int Clock::getSeconds()
 bool Clock::getAlarm()
 {
 	return _countdown_alarm;
+}
+
+void Clock::clearAlarm()
+{
+	_countdown_alarm = false;
 }
 
 void Clock::update()
@@ -150,8 +155,12 @@ void Clock::display()
 
 void Clock::setSeconds(int seconds)
 {	
+	if(seconds < 0)
+		seconds = 0;
+
 	_clock_time_ms = (unsigned long)seconds * 1000;
 	_countdown_ms = _clock_time_ms;
+	clearAlarm();
 }
 
 void Clock::startCountdown()

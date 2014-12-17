@@ -29,7 +29,7 @@ class Clock
 		Clock();
 		
 		// Set the pins connected to the shift register.
-		void setEncoderPins(int latch, int clock, int data);
+		void setShifterPins(int latch, int clock, int data);
 		
 		// Set the pins connected to the four digit-enable pins.
 		void setDigitPins(int digit_1, int digit_2, int digit_3, int digit_4);
@@ -37,7 +37,9 @@ class Clock
 		// Call update to recalculate the state of the clock and to cause an update.
 		void update();
 		
-		// Set the current time on the clock, in seconds.
+		// Set the current time on the clock, in seconds. 
+		// Values lower than zero will be clamped to zero.
+		// Resets the state of getAlarm().
 		void setSeconds(int seconds);
 		
 		// Start counting down the clock. A time must first be set with setSecods().
@@ -55,15 +57,18 @@ class Clock
 		// Get the current state of the alarm. Returns true if a countdown has expired; else false.
 		bool getAlarm();
 		
+		// Clear a current alarm state.
+		void clearAlarm();
+		
 		
 	private:
-		// _latch_pin is pin 11 on the 74HC595, and might be labelled ST_CP or SRCLK
+		// Storage register clock is pin 12 on the 74HC595, and might be labelled ST_CP
 		int _latch_pin;
 
-		// _data_pin is pin 12 on the 74HC595, and might be labelled SH_CP or RCLK
+		// Shift register clock is pin 11 on the 74HC595, and might be labelled SH_CP
 		int _clock_pin;
 
-		// _data_pin is pin 14 on the 74HC595, and might be labelled DS or SER
+		// Serial data input is pin 14 on the 74HC595, and might be labelled DS or SER
 		int _data_pin;
 
 		// _digit_pins are the four pins connected to the four anodes of the display, left to right
@@ -84,8 +89,6 @@ class Clock
 		unsigned long _colon_lastchanged_ms;
 
 		void display();
-		void updateClock();
-		void updateNumeric();
 
 };
 

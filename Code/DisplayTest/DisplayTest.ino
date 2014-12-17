@@ -1,11 +1,11 @@
-// LATCH_PIN is pin 11 on the 74HC595, and might be labelled ST_CP or SRCLK
-int LATCH_PIN = 2;
+// Storage register clock is pin 12 on the 74HC595, and might be labelled ST_CP or ????
+int LATCH_PIN = 4;
 
-// DATA_PIN is pin 12 on the 74HC595, and might be labelled SH_CP or RCLK
-int CLOCK_PIN = 3;
+// Shift register clock is pin 11 on the 74HC595, and might be labelled SH_CP or ????
+int CLOCK_PIN = 5;
 
-// DATA_PIN is pin 14 on the 74HC595, and might be labelled DS or SER
-int DATA_PIN = 4;
+// Serial data input is pin 14 on the 74HC595, and might be labelled DS or SER
+int DATA_PIN = 6;
 
 const int digitPins[4] = {7,11,10,12};
  
@@ -27,15 +27,6 @@ const byte BIT_F   = SHIFT_PIN_15;
 const byte BIT_G   = SHIFT_PIN_3;
 const byte BIT_COL = SHIFT_PIN_5;
 
-// Bit values for defining connections between the shift-register and the LED segments
-// byte BIT_D = 1;
-// byte BIT_B = 2;
-// byte BIT_G = 4;
-// byte BIT_A = 8;
-// byte BIT_C = 32;
-// byte BIT_E = 64;
-// byte BIT_F = 128;
-// byte BIT_COL = 16;
 
 //seven segment digits in bits
 const byte digit[10] =      
@@ -79,10 +70,10 @@ void updateDisp()
 	}
 	
 	// Not sure why the example code was zeroing first
-	// digitalWrite(LATCH_PIN, LOW);  
-	// shiftOut(DATA_PIN, CLOCK_PIN, MSBFIRST, B11111111);
-	// digitalWrite(LATCH_PIN, HIGH);
-	// delayMicroseconds(50);
+	digitalWrite(LATCH_PIN, LOW);  
+	shiftOut(DATA_PIN, CLOCK_PIN, MSBFIRST, B11111111);
+	digitalWrite(LATCH_PIN, HIGH);
+	delayMicroseconds(50);
 	
 	// Turn on the current digit to display
 	digitalWrite(digitPins[digitScan], HIGH); 
