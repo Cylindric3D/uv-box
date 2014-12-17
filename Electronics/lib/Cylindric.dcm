@@ -1,11 +1,23 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP 74HC595
+D 8 bits serial in // out Shift Register 3 State Out
+K HCMOS SR 3State
+F 74xx/74HC595.pdf
+$ENDCMP
+#
 $CMP ATA3492BW
 D 4 Digit 7 Segment Led Common Anode Module
 $ENDCMP
 #
 $CMP Arduino_Pro_Micro
 D Arduino Pro Micro
+$ENDCMP
+#
+$CMP STB55NF
+D STB55NF06, 50V Vds, 30A Id, N-Channel Power MOSFET, TO220
+K N-Channel Power MOSFET
+F http://www.datasheetarchive.com/dl/Datasheet-039/DSA0087457.pdf
 $ENDCMP
 #
 #End Doc Library

@@ -1,16 +1,30 @@
-Cmp-Mod V01 Created by Cvpcb (2014-12-11 BZR 5320)-product   date = 15/12/2014 13:33:56
+Cmp-Mod V01 Created by Cvpcb (2014-12-04 BZR 5312)-product   date = 17/12/2014 00:39:44
 
 BeginCmp
 TimeStamp = /54886463;
 Reference = C1;
-ValeurCmp = 0.1uF;
+ValeurCmp = 0.1µF;
 IdModule  = Capacitors_ThroughHole:Capacitor4x3RM2.5;
 EndCmp
 
 BeginCmp
 TimeStamp = /54886462;
 Reference = C2;
-ValeurCmp = 0.1uF;
+ValeurCmp = 0.1µF;
+IdModule  = Capacitors_ThroughHole:Capacitor4x3RM2.5;
+EndCmp
+
+BeginCmp
+TimeStamp = /5490D6B1;
+Reference = C3;
+ValeurCmp = 0.33µF;
+IdModule  = Capacitors_ThroughHole:Capacitor4x3RM2.5;
+EndCmp
+
+BeginCmp
+TimeStamp = /5490DC94;
+Reference = C4;
+ValeurCmp = 0.1µF;
 IdModule  = Capacitors_ThroughHole:Capacitor4x3RM2.5;
 EndCmp
 
@@ -50,9 +64,9 @@ IdModule  = Pin_Headers:Pin_Header_Angled_1x02;
 EndCmp
 
 BeginCmp
-TimeStamp = /54886475;
+TimeStamp = /5490C26A;
 Reference = Q1;
-ValeurCmp = FET;
+ValeurCmp = P55NF;
 IdModule  = Transistors_TO-220:TO-220_FET-GDS_Horizontal;
 EndCmp
 
@@ -64,16 +78,9 @@ IdModule  = Discret:R3;
 EndCmp
 
 BeginCmp
-TimeStamp = /5488645F;
+TimeStamp = /5490E3F0;
 Reference = R2;
-ValeurCmp = 1k;
-IdModule  = Discret:R3;
-EndCmp
-
-BeginCmp
-TimeStamp = /5488645E;
-Reference = R3;
-ValeurCmp = 330;
+ValeurCmp = 10k;
 IdModule  = Discret:R3;
 EndCmp
 
@@ -155,9 +162,9 @@ IdModule  = Discret:SW_PUSH-12mm;
 EndCmp
 
 BeginCmp
-TimeStamp = /5488645B;
+TimeStamp = /5490D149;
 Reference = U1;
-ValeurCmp = LM317T;
+ValeurCmp = LM7805CT;
 IdModule  = Transistors_TO-220:TO-220_Neutral123_Horizontal;
 EndCmp
 
