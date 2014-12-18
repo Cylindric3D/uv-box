@@ -1,5 +1,5 @@
 Basic States
-============
+------------
 
 * **STATE_STARTUP**
 The firmware starts in the Startup state while setting up. In this state no user input is accepted. After startup is complete, the state moves to *STATE_READY*.
@@ -14,7 +14,7 @@ This is the state when the countdown is running, and the LEDs are on. The user c
 This is a simple reset-state. After a preset time, the display will reset and the state will return to *STATE_READY*.
 
 State Transitions
-=================
+-----------------
 * *STATE_STARTUP*
   * automatically to *STATE_READY*
 * *STATE_READY*

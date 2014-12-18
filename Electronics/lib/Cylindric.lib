@@ -100,7 +100,7 @@ T 0 200 -450 31 0 0 0 MOSI  Normal 0 R C
 T 0 -250 -50 31 0 0 0 PWM  Normal 0 L C
 T 0 -100 -450 31 0 0 0 PWM  Normal 0 L C
 T 0 -100 -150 31 0 0 0 PWM  Normal 0 L C
-T 0 75 -550 31 0 0 0 PWM  Normal 0 L C
+T 0 198 -548 31 0 0 0 PWM  Normal 0 R C
 T 0 -250 350 31 0 0 0 RX,INT  Normal 0 L C
 T 0 -250 150 31 0 0 0 SCL,PWM,INT  Normal 0 L C
 T 0 200 -250 31 0 0 0 SCLK  Normal 0 R C

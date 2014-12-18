@@ -1,6 +1,4 @@
 EESchema Schematic File Version 2
-LIBS:cylindric
-LIBS:borniers
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -31,7 +29,9 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:controller-cache
+LIBS:borniers
+LIBS:cylindric
+LIBS:digit_board-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -221,7 +221,7 @@ F 3 "" H 6000 1150 60  0000 C CNN
 	1    6000 1150
 	1    0    0    -1  
 $EndComp
-Text Label 7225 1300 0    60   ~ 0
+Text Label 7200 1300 0    60   ~ 0
 D18
 Text Notes 7200 750  0    60   ~ 0
 Switch Input
@@ -399,13 +399,17 @@ Connection ~ 4100 2350
 Wire Wire Line
 	4100 2350 4100 2450
 Wire Wire Line
-	3900 2350 4300 2350
+	3900 2350 4100 2350
+Wire Wire Line
+	4100 2350 4300 2350
 Wire Wire Line
 	4500 1500 4550 1500
 Wire Wire Line
 	4450 1700 4550 1700
 Wire Wire Line
-	4500 950  4500 1500
+	4500 950  4500 1100
+Wire Wire Line
+	4500 1100 4500 1500
 Wire Wire Line
 	4500 1100 4550 1100
 Connection ~ 4500 1100
@@ -416,18 +420,32 @@ Connection ~ 3900 1600
 Wire Wire Line
 	3900 2250 3900 2350
 Wire Wire Line
-	5700 1800 6600 1800
+	5700 1800 6000 1800
 Wire Wire Line
-	5700 1350 6250 1350
+	6000 1800 6600 1800
 Wire Wire Line
-	1450 1400 1850 1400
+	5700 1350 6000 1350
+Wire Wire Line
+	6000 1350 6250 1350
+Wire Wire Line
+	1450 1400 1650 1400
+Wire Wire Line
+	1650 1400 1850 1400
 Connection ~ 1650 1400
 Wire Wire Line
-	1650 1150 1650 1550
+	1650 1150 1650 1400
+Wire Wire Line
+	1650 1400 1650 1550
 Wire Wire Line
 	2250 2050 2250 1700
 Wire Wire Line
-	1450 2050 2825 2050
+	1450 2050 1650 2050
+Wire Wire Line
+	1650 2050 1800 2050
+Wire Wire Line
+	1800 2050 2250 2050
+Wire Wire Line
+	2250 2050 2825 2050
 Connection ~ 1800 2050
 Wire Notes Line
 	800  750  800  2300
@@ -454,7 +472,9 @@ Wire Notes Line
 Wire Notes Line
 	10700 2800 8600 2800
 Wire Wire Line
-	5700 900  6600 900 
+	5700 900  6000 900 
+Wire Wire Line
+	6000 900  6600 900 
 Wire Wire Line
 	5700 1350 5700 1400
 Connection ~ 6000 1350
@@ -527,11 +547,15 @@ Wire Wire Line
 Wire Wire Line
 	4300 1350 4300 1300
 Wire Wire Line
-	4300 1300 4550 1300
+	4300 1300 4450 1300
+Wire Wire Line
+	4450 1300 4550 1300
 Wire Wire Line
 	3900 1750 3900 1600
 Wire Wire Line
-	3750 1600 4000 1600
+	3750 1600 3900 1600
+Wire Wire Line
+	3900 1600 4000 1600
 Wire Wire Line
 	3200 3250 3400 3250
 Text Label 3225 3650 0    60   ~ 0
@@ -753,7 +777,7 @@ Wire Wire Line
 Wire Wire Line
 	1350 5350 1350 5100
 Wire Bus Line
-	3500 4525 6150 4525
+	3500 4375 6150 4375
 Entry Wire Line
 	3400 3250 3500 3350
 Entry Wire Line
@@ -771,7 +795,23 @@ Entry Wire Line
 Entry Wire Line
 	3400 3950 3500 4050
 Wire Bus Line
-	3500 3175 3500 4525
+	3500 3175 3500 3350
+Wire Bus Line
+	3500 3350 3500 3450
+Wire Bus Line
+	3500 3450 3500 3550
+Wire Bus Line
+	3500 3550 3500 3650
+Wire Bus Line
+	3500 3650 3500 3750
+Wire Bus Line
+	3500 3750 3500 3850
+Wire Bus Line
+	3500 3850 3500 3950
+Wire Bus Line
+	3500 3950 3500 3900
+Wire Bus Line
+	3500 3900 3500 4375
 Entry Wire Line
 	6050 4850 6150 4750
 Entry Wire Line
@@ -789,7 +829,25 @@ Entry Wire Line
 Entry Wire Line
 	6050 5550 6150 5450
 Wire Bus Line
-	6150 4525 6150 5600
+	6150 4375 6150 4600
+Wire Bus Line
+	6150 4600 6150 4750
+Wire Bus Line
+	6150 4750 6150 4850
+Wire Bus Line
+	6150 4850 6150 4950
+Wire Bus Line
+	6150 4950 6150 5050
+Wire Bus Line
+	6150 5050 6150 5150
+Wire Bus Line
+	6150 5150 6150 5250
+Wire Bus Line
+	6150 5250 6150 5350
+Wire Bus Line
+	6150 5350 6150 5450
+Wire Bus Line
+	6150 5450 6150 5600
 Wire Wire Line
 	9050 2050 8900 2050
 Text Label 8900 2050 2    60   ~ 0
@@ -847,7 +905,9 @@ F 3 "" H 2825 1750 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2825 1150 2825 1550
+	2825 1150 2825 1400
+Wire Wire Line
+	2825 1400 2825 1550
 Connection ~ 2825 1400
 Wire Wire Line
 	2825 2050 2825 1950
@@ -890,7 +950,9 @@ F 3 "" H 8150 950 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7400 1150 7400 1450
+	7400 1150 7400 1300
+Wire Wire Line
+	7400 1300 7400 1450
 Wire Wire Line
 	7400 1450 7500 1450
 Wire Wire Line
@@ -909,6 +971,6 @@ F 3 "" H 8150 1600 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7400 1300 7250 1300
+	7400 1300 7200 1300
 Connection ~ 7400 1300
 $EndSCHEMATC
