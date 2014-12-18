@@ -1,4 +1,6 @@
 EESchema Schematic File Version 2
+LIBS:cylindric
+LIBS:borniers
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -29,16 +31,13 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:borniers
-LIBS:cylindric
-LIBS:led_panels-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "UV Exposure Box - LED Panels"
-Date "12 December 2014"
+Date "18 December 2014"
 Rev "1.0"
 Comp ""
 Comment1 ""
@@ -1555,7 +1554,7 @@ Wire Wire Line
 Connection ~ 2100 2550
 Connection ~ 2100 4750
 Wire Wire Line
-	1800 2750 1800 4750
+	1800 2750 1800 4850
 Connection ~ 2400 4750
 Wire Wire Line
 	2400 4750 2400 4650
@@ -1647,7 +1646,7 @@ L +12V #PWR02
 U 1 1 5480BE9F
 P 3000 2450
 F 0 "#PWR02" H 3000 2400 20  0001 C CNN
-F 1 "+12V" H 3000 2550 30  0000 C CNN
+F 1 "+12V" H 3000 2600 30  0000 C CNN
 F 2 "" H 3000 2450 60  0000 C CNN
 F 3 "" H 3000 2450 60  0000 C CNN
 	1    3000 2450
@@ -1656,29 +1655,27 @@ $EndComp
 $Comp
 L PWR_FLAG #FLG03
 U 1 1 547DC25B
-P 6150 2450
-F 0 "#FLG03" H 6150 2545 30  0001 C CNN
-F 1 "PWR_FLAG" H 6150 2630 30  0000 C CNN
-F 2 "" H 6150 2450 60  0000 C CNN
-F 3 "" H 6150 2450 60  0000 C CNN
-	1    6150 2450
+P 1800 2450
+F 0 "#FLG03" H 1800 2545 30  0001 C CNN
+F 1 "PWR_FLAG" H 1800 2630 30  0000 C CNN
+F 2 "" H 1800 2450 60  0000 C CNN
+F 3 "" H 1800 2450 60  0000 C CNN
+	1    1800 2450
 	1    0    0    -1  
 $EndComp
 $Comp
 L PWR_FLAG #FLG04
 U 1 1 547DC26F
-P 6150 4850
-F 0 "#FLG04" H 6150 4945 30  0001 C CNN
-F 1 "PWR_FLAG" H 6150 5030 30  0000 C CNN
-F 2 "" H 6150 4850 60  0000 C CNN
-F 3 "" H 6150 4850 60  0000 C CNN
-	1    6150 4850
+P 1800 4850
+F 0 "#FLG04" H 1800 4945 30  0001 C CNN
+F 1 "PWR_FLAG" H 1800 5030 30  0000 C CNN
+F 2 "" H 1800 4850 60  0000 C CNN
+F 3 "" H 1800 4850 60  0000 C CNN
+	1    1800 4850
 	-1   0    0    1   
 $EndComp
+Connection ~ 1800 4750
 Wire Wire Line
-	6150 4850 6150 4750
-Connection ~ 6150 4750
-Wire Wire Line
-	6150 2450 6150 2550
-Connection ~ 6150 2550
+	1800 2450 1800 2550
+Connection ~ 1800 2550
 $EndSCHEMATC
