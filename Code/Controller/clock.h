@@ -45,6 +45,9 @@ class Clock
 		// Start counting down the clock. A time must first be set with setSecods().
 		void startCountdown();
 		
+		// Stop counting down the clock.
+		void stopCountdown();
+		
 		// Start blinking the colon.
 		void startBlinkingColon();
 		
@@ -77,6 +80,7 @@ class Clock
 		//seven segment digits in bits
 		byte _digit[10];
 		
+		int _display_mode;
 		int _digit_buffer[4];
 		int _digit_scan;
 		bool _colon_blinking;

@@ -27,6 +27,7 @@ Clock::Clock()
 	_digit_scan = 0;
 	_countdown_alarm = false;
 	_colon_lastchanged_ms = 0;
+	_display_mode = 0;
 }
 
 void Clock::setShifterPins(int latch, int clock, int data)
@@ -74,7 +75,7 @@ void Clock::update()
 		if(_colon_lastchanged_ms + 500 < millis())
 		{
 			_colon_enabled = !_colon_enabled;
-			_colon_lastchanged_ms = millis();
+			_colon_lastchanged_ms += 500; // We don't add 500 to millis() to prevent drift.
 		}
 	}
 
@@ -98,11 +99,25 @@ void Clock::update()
 	// Set the digits to display
 	int minutesPart = (_clock_time_ms / 1000) / 60;
 	int secondsPart = (_clock_time_ms / 1000) % 60;
-
-	_digit_buffer[0] = minutesPart / 10;
-	_digit_buffer[1] = minutesPart % 10;
-	_digit_buffer[2] = secondsPart / 10;
-	_digit_buffer[3] = secondsPart % 10;
+	int millisPart = (_clock_time_ms / 10) % 100;
+	
+	switch(_display_mode)
+	{
+		case 0:
+			_digit_buffer[0] = minutesPart / 10;
+			_digit_buffer[1] = minutesPart % 10;
+			_digit_buffer[2] = secondsPart / 10;
+			_digit_buffer[3] = secondsPart % 10;
+			break;
+		
+		case 1:
+			_digit_buffer[0] = secondsPart / 10;
+			_digit_buffer[1] = secondsPart % 10;
+			_digit_buffer[2] = millisPart / 10;
+			_digit_buffer[3] = millisPart % 10;
+			break;
+		
+	}
 	
 	display();
 }
@@ -168,6 +183,11 @@ void Clock::startCountdown()
 	_countdown_running = true;
 	_clock_started_ms = millis();
 	_colon_lastchanged_ms = _clock_started_ms;
+}
+
+void Clock::stopCountdown()
+{
+	_countdown_running = false;
 }
 
 void Clock::startBlinkingColon()
