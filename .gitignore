@@ -14,8 +14,6 @@ _autosave-*
 # Project-specific ignores
 ~$*.xlsx
 Electronics/lib.pretty/
-Electronics/plots/
-Electronics/export/
 Code/ButtonTest/button.cpp
 Code/ButtonTest/button.h
 Code/EncoderTestLibrary/Encoder.h
