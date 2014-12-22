@@ -91,6 +91,7 @@ class Clock
 		unsigned long _clock_started_ms;
 		unsigned long _countdown_ms;
 		unsigned long _colon_lastchanged_ms;
+		int _last_second;
 
 		void display();
 

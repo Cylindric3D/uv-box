@@ -141,7 +141,9 @@ void loop()
 			encoderValue = newEncoderValue;
 			memory.setClockSeconds(encoderValue / ENCODER_STEPS_PER_CLICK);
 			clock.setSeconds(memory.getClockSeconds());
+			Serial.print("Encoder: "); Serial.println(encoderValue);
 		}
+		
 	}
 	
 
