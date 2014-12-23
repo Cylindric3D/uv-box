@@ -28,6 +28,7 @@ Clock::Clock()
 	_countdown_alarm = false;
 	_colon_lastchanged_ms = 0;
 	_display_mode = 0;
+	_last_second = 0;
 }
 
 void Clock::setShifterPins(int latch, int clock, int data)
@@ -120,6 +121,12 @@ void Clock::update()
 	}
 	
 	display();
+	
+	if(secondsPart != _last_second)
+	{
+		Serial.print("Clock: "); Serial.println(_clock_time_ms / 1000);
+		_last_second = secondsPart;
+	}
 }
 
 

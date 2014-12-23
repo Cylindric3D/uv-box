@@ -12,28 +12,28 @@
 /* ***********************************************/
 
 // SHIFT_X_PIN are the three inputs to the shift-register.
-const int SHIFT_LATCH_PIN = 4;
-const int SHIFT_CLOCK_PIN = 5;
-const int SHIFT_DATA_PIN = 6;
+const int SHIFT_LATCH_PIN = 7;
+const int SHIFT_CLOCK_PIN = 4;
+const int SHIFT_DATA_PIN = 8;
 
 // DIGIT_X_PIN are the four digit-enable pins.
-const int DIGIT_1_PIN = 7;
-const int DIGIT_2_PIN = 11;
+const int DIGIT_1_PIN = 15;
+const int DIGIT_2_PIN = 14;
 const int DIGIT_3_PIN = 10;
-const int DIGIT_4_PIN = 12;
+const int DIGIT_4_PIN = 16;
 
 // ENCODER_PIN_x are the two inputs from the encoder.
 const int ENCODER_PIN_A = 2;
 const int ENCODER_PIN_B = 3;
 
 // PANEL_ENABLE_PIN is the trigger for the main LED control.
-const int PANEL_ENABLE_PIN = 8;
+const int PANEL_ENABLE_PIN = 6;
 
 // START_BUTTON_PIN is the main 'go' button.
-const int START_BUTTON_PIN = A0;
+const int START_BUTTON_PIN = 18;
 
 // BEEP_PIN is the buzzer pin.
-const int BEEP_PIN = 9;
+const int BEEP_PIN = 5;
 
 /* ***********************************************/
 /* SETUP THE PARAMETERS                          */
@@ -141,7 +141,9 @@ void loop()
 			encoderValue = newEncoderValue;
 			memory.setClockSeconds(encoderValue / ENCODER_STEPS_PER_CLICK);
 			clock.setSeconds(memory.getClockSeconds());
+			Serial.print("Encoder: "); Serial.println(encoderValue);
 		}
+		
 	}
 	
 

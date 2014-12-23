@@ -15,12 +15,12 @@ const int SHIFT_PIN_15 = 128;
 
 const byte BIT_A   = SHIFT_PIN_4;
 const byte BIT_B   = SHIFT_PIN_2;
-const byte BIT_C   = SHIFT_PIN_6;
+const byte BIT_C   = SHIFT_PIN_5;
 const byte BIT_D   = SHIFT_PIN_1;
-const byte BIT_E   = SHIFT_PIN_7;
+const byte BIT_E   = SHIFT_PIN_6;
 const byte BIT_F   = SHIFT_PIN_15;
 const byte BIT_G   = SHIFT_PIN_3;
-const byte BIT_COL = SHIFT_PIN_5;
+const byte BIT_COL = SHIFT_PIN_7;
 
 class Clock
 {
@@ -91,6 +91,7 @@ class Clock
 		unsigned long _clock_started_ms;
 		unsigned long _countdown_ms;
 		unsigned long _colon_lastchanged_ms;
+		int _last_second;
 
 		void display();
 
