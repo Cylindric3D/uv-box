@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by Cvpcb (2014-12-04 BZR 5312)-product   date = 17/12/2014 00:39:44
+Cmp-Mod V01 Created by Cvpcb (2014-12-11 BZR 5320)-product   date = 23/12/2014 14:16:43
 
 BeginCmp
 TimeStamp = /54886463;
@@ -29,10 +29,31 @@ IdModule  = Capacitors_ThroughHole:Capacitor4x3RM2.5;
 EndCmp
 
 BeginCmp
+TimeStamp = /549963F2;
+Reference = C5;
+ValeurCmp = 22pF;
+IdModule  = Capacitors_ThroughHole:Capacitor4x3RM2.5;
+EndCmp
+
+BeginCmp
+TimeStamp = /54995745;
+Reference = C6;
+ValeurCmp = 22pF;
+IdModule  = Capacitors_ThroughHole:Capacitor4x3RM2.5;
+EndCmp
+
+BeginCmp
 TimeStamp = /5488F621;
 Reference = ENC1;
 ValeurCmp = Encoder;
 IdModule  = Cylindric:ALPS_Encoder-EC12E2420404;
+EndCmp
+
+BeginCmp
+TimeStamp = /549942D3;
+Reference = IC1;
+ValeurCmp = ATMEGA328P-P;
+IdModule  = Sockets_DIP:DIP-28__600;
 EndCmp
 
 BeginCmp
@@ -64,6 +85,13 @@ IdModule  = Pin_Headers:Pin_Header_Angled_1x02;
 EndCmp
 
 BeginCmp
+TimeStamp = /54997838;
+Reference = P4;
+ValeurCmp = PROG;
+IdModule  = Pin_Headers:Pin_Header_Angled_1x02;
+EndCmp
+
+BeginCmp
 TimeStamp = /5490C26A;
 Reference = Q1;
 ValeurCmp = P55NF;
@@ -80,6 +108,13 @@ EndCmp
 BeginCmp
 TimeStamp = /5490E3F0;
 Reference = R2;
+ValeurCmp = 10k;
+IdModule  = Discret:R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /54994783;
+Reference = R3;
 ValeurCmp = 10k;
 IdModule  = Discret:R3;
 EndCmp
@@ -143,20 +178,27 @@ EndCmp
 BeginCmp
 TimeStamp = /548F1F3E;
 Reference = R12;
-ValeurCmp = 100R;
+ValeurCmp = 120R;
 IdModule  = Discret:R3;
 EndCmp
 
 BeginCmp
 TimeStamp = /548F1AA5;
 Reference = SP1;
-ValeurCmp = SPEAKER;
+ValeurCmp = PIEZO;
 IdModule  = Pin_Headers:Pin_Header_Angled_1x02;
 EndCmp
 
 BeginCmp
 TimeStamp = /54890306;
 Reference = SW1;
+ValeurCmp = SW_PUSH;
+IdModule  = Discret:SW_PUSH-12mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /54996E9D;
+Reference = SW2;
 ValeurCmp = SW_PUSH;
 IdModule  = Discret:SW_PUSH-12mm;
 EndCmp
@@ -176,10 +218,10 @@ IdModule  = Sockets_DIP:DIP-16__300;
 EndCmp
 
 BeginCmp
-TimeStamp = /54886472;
-Reference = U3;
-ValeurCmp = Arduino_Pro_Micro;
-IdModule  = Cylindric:ArduinoProMicro;
+TimeStamp = /549954BB;
+Reference = X1;
+ValeurCmp = 16MHz;
+IdModule  = Crystals:Crystal_HC50-U_Vertical;
 EndCmp
 
 EndListe
